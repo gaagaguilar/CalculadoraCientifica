@@ -1,27 +1,143 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+.calculator {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20px;
+  background: linear-gradient(135deg, #f7f7f7, #e1e1e1);
+  height: 100%;
+  max-height: 100vh;
+  overflow: hidden;
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.screen {
+  width: 90%;
+  min-height: 70px;
+  background-color: #1e1e1e;  /* Fondo oscuro para la pantalla */
+  color: #ffffff;  /* Texto blanco para los números */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+  font-size: 2.8rem;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: right;
+  border: 2px solid #f39c12;  /* Borde con color llamativo */
+  white-space: nowrap;
+  overflow-x: auto;
+  word-wrap: break-word;
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+/* Para eliminar el borde del input y asegurarnos de que se vea bien */
+input {
+  border: none;
+  background-color: transparent;
+  color: #ffffff;
+  font-size: 2.8rem;
+  width: 100%;
+  text-align: right;
+  padding: 0 15px;
+  outline: none;
 }
 
-#container a {
-  text-decoration: none;
+button {
+  font-size: 1.6rem;
+  padding: 20px;
+  width: 100%;
+  margin: 8px;
+  border-radius: 20px;
+  border: none;
+  background-color: #f1f1f1;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:active {
+  background-color: #e4e4e4;
+  transform: scale(0.98);
+}
+
+button.operator {
+  background-color: #f2a900; /* Naranja para operadores */
+}
+
+button.operator:active {
+  background-color: #f39c12;
+}
+
+button.function {
+  background-color: #8e44ad; /* Morado para funciones científicas */
+}
+
+button.function:active {
+  background-color: #9b59b6;
+}
+
+button.clear {
+  background-color: #e74c3c; /* Rojo para el botón de borrar */
+  color: #ffffff;
+}
+
+button.clear:active {
+  background-color: #c0392b;
+}
+
+button.equal {
+  background-color: #27ae60; /* Verde para el botón de igual */
+}
+
+button.equal:active {
+  background-color: #2ecc71;
+}
+
+button.number {
+  background-color: #f7f7f7; /* Gris claro para los números */
+  color: #333333;
+}
+
+button.number:active {
+  background-color: #e4e4e4;
+}
+
+ion-row {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+ion-col {
+  width: 22%;
+}
+
+@media (max-width: 768px) {
+  .calculator {
+    padding-top: 10px;
+  }
+
+  .screen {
+    width: 95%;
+    height: 60px;
+    font-size: 2.5rem;
+  }
+
+  button {
+    font-size: 1.4rem;
+    padding: 15px;
+  }
+
+  ion-row {
+    flex-wrap: wrap;
+  }
+
+  ion-col {
+    width: 48%;
+    margin-bottom: 10px;
+  }
 }
